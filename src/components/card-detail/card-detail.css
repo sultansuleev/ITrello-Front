@@ -1,0 +1,8 @@
+.card-action span{
+    color:white;
+    font-weight: bold;
+}
+.card-action span:hover{
+    color:wheat;
+    cursor: pointer;
+}

@@ -35,7 +35,7 @@ const CardDetail = ({id}) => {
                         <span className={'btn btn-danger'} onClick={deleteCard}>Delete</span>
 
                     </div>
-                    <Link class="btn btn-primary" to="/all">Back to Home</Link>
+                    <Link className="btn btn-primary" to="/all">Back to Home</Link>
                 </div>
             )}
         </>

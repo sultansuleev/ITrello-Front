@@ -9,11 +9,17 @@ const instSec = axios.create({
 });
 
 class CardService {
-     getCards(){
-        return  instance.get('/cards');
+     getCards(token){
+        console.log(token);
+        return  instance.get('/cards/' + token);
     }
      addNewCard(card){
+         console.log(card)
         return  instance.post('/addCard', card);
+    }
+    editCard(card){
+        console.log(card)
+         return instance.post('/editCard', card)
     }
      getCardById(id){
         return instance.get('/card/'+id)

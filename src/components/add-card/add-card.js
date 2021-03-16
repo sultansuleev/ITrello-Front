@@ -4,7 +4,6 @@ import './add-card.css';
 
 
 const AddCard = ({addCard})=>{
-    
     const [name, setName] = useState('');
 
     const onSubmit = (e) =>{
@@ -25,14 +24,17 @@ const AddCard = ({addCard})=>{
             minutes='0'+ minutes;
         }
         const output = day+'.'+month+'.'+year+' '+hours+':'+minutes;
+        let jwtToken = localStorage.getItem("token");
+
+        console.log(jwtToken);
         const newItem = {
             name,
-            addedDate:output
+            jwtToken:jwtToken
         }
+
         addCard(newItem);
         setName('');
     }
-
 
     return(
         <div className="card">

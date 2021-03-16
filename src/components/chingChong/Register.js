@@ -46,7 +46,7 @@ const Register = ({addUsr}) =>{
     return (
         <div className = "container">
             <div className = "row mt-3">
-                <div className = "col-6 mx-auto">
+                <div className = "col-lg-15 mx-auto">
                     <form onSubmit = {handleSubmit}>
                         <div className = "form-group">
                             <label>

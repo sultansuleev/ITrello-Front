@@ -23,29 +23,31 @@ const EditPage = ({id})=>{
 
         e.preventDefault();
         const newCard = {
-            name,
-            addedDate,
-            id
+            id,
+            name
         };
-        CardService.addNewCard(newCard);
+
+        CardService.editCard(newCard).then(res=>{if(res.status===200){
+            history.push("/all");
+        }});
     }
 
     return(
     <div className="card" style={{width:'100%'}}>
         <form onSubmit={OnEdit}>
-            <div class="input-field ">
+            <div className="input-field ">
                 <input placeholder="Name"  type="text" value={name}  onChange={(e)=>{
                         setName(e.target.value);
                     }} />
             </div>
-            <div class="input-field ">                
+            <div className="input-field ">
                 <input placeholder="Date"  type="text" disabled value={addedDate}
                 />
             </div>
             <div style={{display:'flex', justifyContent:'space-between'}}>
             <button className="btn waves-effect waves-light" type="submit">Edit</button>
             <button className="btn waves-effect waves-light" onClick={()=>{
-                history.push('/');
+                history.push('/all');
             }}>Back</button>
             </div>
         </form>

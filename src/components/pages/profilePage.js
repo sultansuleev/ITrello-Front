@@ -67,7 +67,8 @@ export default function Profile() {
     return (
         <div className="container">
             <div>
-                <header className="jumbotron">
+                <header className="jumbotron d-flex flex-column justify-content-center text-center" style={{width: '70%', margin: '0 auto', background: '#fff'}}>
+                    <img src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png" alt="" style={{width: '60%', margin: '0 auto 20px'}}/>
                     <h3>
                         <strong>{user.fullName}`s</strong> Profile
                     </h3>

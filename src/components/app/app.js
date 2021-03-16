@@ -1,30 +1,29 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './app.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {CardsPage, CardDetailsPage, EditPage} from '../pages';
-import Header from '../header';
+import {BrowserRouter as Router, Route, Switch, useHistory, withRouter} from 'react-router-dom';
+import {Header} from '../header';
+import UserProvider from "../chingChong/UserProvider";
+import UserContext from "../chingChong/UserContext";
+import Main from "./main";
 
 const App = () => {
-    return (
-        <Router>
-            <Header/>
-            <div className="container">
-                <Route exact path="/" component={CardsPage}/>
-                <Route exact path="/card/:id"
-                       render={({match}) => {
-                           const {id} = match.params;
-                           return <CardDetailsPage id={id}/>
-                       }}
-                />
-                <Route exact path="/edit/:id"
-                       render={({match}) => {
-                           const {id} = match.params;
-                           return <EditPage id={id}/>
-                       }}
-                />
 
-            </div>
-        </Router>
+    const [user, setUser] = useState("");
+
+    useEffect(() => {
+        setUser(localStorage.getItem("token"));
+    }, [])
+
+
+    return (
+        <UserProvider>
+            <Router>
+                <Header token={user} />
+                <div className="container">
+                    <Main/>
+                </div>
+            </Router>
+        </UserProvider>
     );
 };
-export default App;
+export default (App);

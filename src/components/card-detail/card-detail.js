@@ -24,7 +24,7 @@ const CardDetail = ({id}) => {
     }, [id]);
     return (
         <>
-            {cardDeleted ? <Redirect to={'/'} exact/> : (
+            {cardDeleted ? <Redirect to={'/all'} exact/> : (
                 <div className="card" style={{width: '100%'}}>
                     <div className="card-content">
                         <span className="card-title">{name}</span>
@@ -35,7 +35,7 @@ const CardDetail = ({id}) => {
                         <span className={'btn btn-danger'} onClick={deleteCard}>Delete</span>
 
                     </div>
-                    <Link class="btn btn-primary" to="/">Back to Home</Link>
+                    <Link class="btn btn-primary" to="/all">Back to Home</Link>
                 </div>
             )}
         </>

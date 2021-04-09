@@ -4,7 +4,7 @@ My simple project that I created for course "Java EE Business Component and Web-
 
 ## Programming Languages
 
-- Html, CSS and JS
+- HTML, CSS and JS
 - ReactJS
 
 ## Packages

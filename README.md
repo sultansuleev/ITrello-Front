@@ -18,7 +18,7 @@ My simple project that I created for course "Java EE Business Component and Web-
 - `git clone` the repository or download a .zip file using the download button.
 - In the project folder, run `npm install` to install dependencies.
 - Install and run Backend part of the project - [Navigate Here](https://github.com/sultansuleev/ITrello-Back)
-- Then either use `npm start` in the terminal/command line or in Visual Studio with `Shift + F10` to build and run the project.
+- Then either use `npm start` in the terminal/command line or in WebStorm with `Shift + F10` to build and run the project.
 
 ## Author
 
